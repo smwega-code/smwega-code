@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @smwega-code
+- 👋 Hi, I’m Stevenson
 - 👀 I’m interested in ...web development
 - 🌱 I’m currently learning ..html,css javascript.
 - 💞️ I’m looking to collaborate on .building websites..
