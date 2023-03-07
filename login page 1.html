@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+		form {
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 20px;
+			margin: 20px auto;
+			max-width: 400px;
+			box-shadow: 0 0 5px 0 rgba(8, 8, 8, 0.1);
+		}
+		h1 {
+			margin-top: 0;
+			text-align: center;
+			color: #0b0c0b;
+		}
+		label, input {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"], input[type="password"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			background-color: #0a0a0a;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			width: 100%;
+		}
+		input[type="submit"]:hover {
+			background-color: #09a7f0;
+		}
+		.error {
+			color: rgb(221, 10, 10);
+			font-size: 14px;
+			margin-top: 5px;
+		}
+		.forgot-password {
+			display: none;
+			margin-top: 20px;
+		}
+		.forgot-password label, .forgot-password input {
+			display: inline-block;
+			margin: 10px;
+		}
+		.forgot-password input[type="submit"] {
+			width: auto;
+			margin-top: 0;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#forgot-password-link").click(function() {
+				$(".forgot-password").show();
+				$("#forgot-password-link").hide();
+			});
+			$("#cancel-link").click(function() {
+				$(".forgot-password").hide();
+				$("#forgot-password-link").show();
+			});
+		});
+		function validateForm() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			if (username == "" || password == "") {
+				document.getElementById("error-message").innerHTML = "Please enter both a username and password.";
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<form action="#" method="post" onsubmit="return validateForm()">
+		<h1>Login</h1>
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" required>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" required>
+		<input type="submit" value="Login">
+		<div id="error-message" class="error"></div>
+		
+		
+	
+		
